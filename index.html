@@ -1,47 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Primera Página</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Imperio Digital</title>
     <style>
+        /* Fondo animado y oscuro */
         body {
-            background-color: #121212; 
+            background: radial-gradient(circle, #1a0010, #050005);
             color: #ffffff;            
             font-family: 'Segoe UI', Arial, sans-serif; 
             text-align: center;        
-            padding-top: 100px;        
+            padding-top: 150px;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
         }
+
+        /* Efecto de luces de fondo que se mueven */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; right: -50%; bottom: -50%;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.1) 0%, transparent 60%);
+            animation: flotar 8s infinite alternate linear;
+            z-index: 0;
+        }
+
         h1 {
             color: #ff3366;           
-            font-size: 50px;           
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #ff3366, 0 0 30px #ff3366;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
+
         p {
-            font-size: 22px;           
-            color: #aaaaaa;            
-        }
-        .boton-chingon {
-            background-color: #ffcc00;
-            color: #000000;
-            padding: 15px 30px;
-            font-size: 18px;
+            font-size: 24px;           
+            color: #00ffcc;
+            text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
             font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0px 4px 15px rgba(255, 204, 0, 0.4);
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
         }
+
+        /* El Botón Destructor con animación de pulso */
+        .boton-chingon {
+            background: linear-gradient(45deg, #ffcc00, #ff9900);
+            color: #000000;
+            padding: 20px 40px;
+            font-size: 22px;
+            font-weight: calc(100% + 800);
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0px 0px 20px #ffcc00;
+            transition: all 0.3s ease;
+            animation: vibrar 2s infinite;
+        }
+
+        /* Efecto al pasar el mouse por encima */
         .boton-chingon:hover {
-            background-color: #ffffff;
-            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.6);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0px 0px 40px #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Animaciones CSS brutas */
+        @keyframes flotar {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(5%, 5%) rotate(360deg); }
+        }
+
+        @keyframes vibrar {
+            0% { box-shadow: 0 0 20px #ffcc00; }
+            50% { box-shadow: 0 0 40px #ff3366; transform: scale(1.02); }
+            100% { box-shadow: 0 0 20px #ffcc00; }
         }
     </style>
 </head>
 <body>
-    <h1>¡A la mierda los que no creyeron!</h1>
-    <p>Este es el inicio de mi imperio digital.</p>
-    <br><br>
-    <button class="boton-chingon" onclick="alert('¡Te dije que no soy ningún inútil, carajo!')">
-        Haz clic aquí para callar bocas
+
+    <h1>Imperio Digital</h1>
+    <p>Controlando la red desde la maldita terminal</p>
+
+    <button class="boton-chingon" onclick="ejecutarHack()">
+        ⚡ ACTIVAR PODER REAL ⚡
     </button>
+
+    <script>
+        function ejecutarHack() {
+            // Esto tira una alerta y cambia el fondo de golpe
+            alert('¡Entorno configurado y desplegado con éxito, carajo!');
+            document.body.style.background = "#00ffcc";
+            document.body.style.color = "#000000";
+            setTimeout(() => {
+                document.body.style.background = "radial-gradient(circle, #1a0010, #050005)";
+                document.body.style.color = "#ffffff";
+            }, 500);
+        }
+    </script>
 </body>
 </html>
