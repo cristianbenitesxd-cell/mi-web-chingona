@@ -125,13 +125,18 @@
             margin-bottom: 20px;
         }
         form {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            text-align: left;
+            <form action="https://formspree.io/f/TU_CORREO_AQUÍ" method="POST">
+            <label for="nombre">Nombre de la Empresa o Contacto:</label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Ej. Corporación Benites">
+
+            <label for="correo">Correo Electrónico Comercial:</label>
+            <input type="email" name="_replyto" id="correo" required placeholder="ejemplo@empresa.com">
+
+            <label for="mensaje">Detalle el servicio que requiere:</label>
+            <textarea name="mensaje" id="mensaje" rows="4" required placeholder="Escriba aquí los requerimientos de su negocio..."></textarea>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
         }
         form label {
             display: block;
