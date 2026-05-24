@@ -3,110 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Imperio Digital</title>
+    <title>Soporte & Soluciones Empresariales</title>
     <style>
-        /* Fondo animado y oscuro */
+        /* Estilos Globales - Paleta Corporativa (Azul, Gris y Blanco) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            background: radial-gradient(circle, #1a0010, #050005);
-            color: #ffffff;            
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            text-align: center;        
-            padding-top: 150px;
-            overflow: hidden;
-            height: 100vh;
-            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f4f6f9;
         }
 
-        /* Efecto de luces de fondo que se mueven */
-        body::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; right: -50%; bottom: -50%;
-            background: radial-gradient(circle, rgba(255, 51, 102, 0.1) 0%, transparent 60%);
-            animation: flotar 8s infinite alternate linear;
-            z-index: 0;
+        /* Barra de Navegación */
+        header {
+            background-color: #0f2c59;
+            color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        h1 {
-            color: #ff3366;           
-            font-size: 60px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px #ff3366, 0 0 30px #ff3366;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        p {
-            font-size: 24px;           
-            color: #00ffcc;
-            text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+        header .logo {
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 1;
+            letter-spacing: 1px;
+        }
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #dac0a3;
         }
 
-        /* El Botón Destructor con animación de pulso */
-        .boton-chingon {
-            background: linear-gradient(45deg, #ffcc00, #ff9900);
-            color: #000000;
-            padding: 20px 40px;
-            font-size: 22px;
-            font-weight: calc(100% + 800);
-            text-transform: uppercase;
+        /* Sección Principal (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
+            height: 60vh;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+        }
+
+        /* Sección de Servicios */
+        .servicios {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .servicios h2 {
+            font-size: 32px;
+            color: #0f2c59;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .contenedor-servicios {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .tarjeta-servicio {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .tarjeta-servicio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .tarjeta-servicio h3 {
+            color: #0f2c59;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .tarjeta-servicio p {
+            color: #666666;
+            font-size: 15px;
+        }
+
+        /* Sección de Contacto (Formulario) */
+        .contacto {
+            background-color: #0f2c59;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contacto h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        form button {
+            width: 100%;
+            background-color: #0f2c59;
+            color: #ffffff;
+            padding: 14px;
             border: none;
-            border-radius: 50px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0px 0px 20px #ffcc00;
-            transition: all 0.3s ease;
-            animation: vibrar 2s infinite;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: #1d447d;
         }
 
-        /* Efecto al pasar el mouse por encima */
-        .boton-chingon:hover {
-            background: #ffffff;
-            color: #000000;
-            box-shadow: 0px 0px 40px #ffffff;
-            transform: scale(1.1);
-        }
-
-        /* Animaciones CSS brutas */
-        @keyframes flotar {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(5%, 5%) rotate(360deg); }
-        }
-
-        @keyframes vibrar {
-            0% { box-shadow: 0 0 20px #ffcc00; }
-            50% { box-shadow: 0 0 40px #ff3366; transform: scale(1.02); }
-            100% { box-shadow: 0 0 20px #ffcc00; }
+        /* Pie de Página */
+        footer {
+            background-color: #111111;
+            color: #888888;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Imperio Digital</h1>
-    <p>Controlando la red desde la maldita terminal</p>
+    <header>
+        <div class="logo">SOLUCIONES PRO</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <button class="boton-chingon" onclick="ejecutarHack()">
-        ⚡ ACTIVAR PODER REAL ⚡
-    </button>
+    <section class="hero" id="inicio">
+        <h1>Optimice Operaciones y Reduzca Costos</h1>
+        <p>Brindamos soporte administrativo y soluciones de gestión eficientes para que su empresa se enfoque en crecer.</p>
+    </section>
 
-    <script>
-        function ejecutarHack() {
-            // Esto tira una alerta y cambia el fondo de golpe
-            alert('¡Entorno configurado y desplegado con éxito, carajo!');
-            document.body.style.background = "#00ffcc";
-            document.body.style.color = "#000000";
-            setTimeout(() => {
-                document.body.style.background = "radial-gradient(circle, #1a0010, #050005)";
-                document.body.style.color = "#ffffff";
-            }, 500);
-        }
-    </script>
+    <section class="servicios" id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="contenedor-servicios">
+            <div class="tarjeta-servicio">
+                <h3>Gestión Administrativa</h3>
+                <p>Organización de archivos, control de flujos documentales y optimización de procesos internos para su negocio.</p>
+            </div>
+            <div class="tarjeta-servicio">
+                <h3>Asistencia Virtual</h3>
+                <p>Soporte remoto especializado en manejo de agenda, atención al cliente y facturación comercial.</p>
+            </div>
+            <div class="tarjeta-servicio">
+                <h3>Asesoría y Control</h3>
+                <p>Monitoreo de métricas operativas y armado de reportes financieros detallados para la toma de decisiones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacto" id="contacto">
+        <h2>Solicite una Cotización</h2>
+        <p style="margin-bottom: 30px; color: #e0e0e0;">Deje sus datos y un asesor se pondrá en contacto en menos de 24 horas.</p>
+        
+        <form onsubmit="event.preventDefault(); alert('Datos comerciales registrados con éxito. Enviando al servidor...');">
+            <label for="nombre">Nombre de la Empresa o Contacto:</label>
+            <input type="text" id="nombre" required placeholder="Ej. Corporación Benites">
+
+            <label for="correo">Correo Electrónico Comercial:</label>
+            <input type="email" id="correo" required placeholder="ejemplo@empresa.com">
+
+            <label for="mensaje">Detalle el servicio que requiere:</label>
+            <textarea id="mensaje" rows="4" required placeholder="Escriba aquí los requerimientos de su negocio..."></textarea>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2026 Soluciones Pro. Todos los derechos reservados.
+    </footer>
+
 </body>
 </html>
