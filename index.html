@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <title>Mi Primera Página</title>
     <style>
-        /* Aquí adentro cambiamos cómo se ve la página */
         body {
-            background-color: #1e1e1e; /* Cambia el fondo a gris oscuro */
-            color: #ffffff;            /* Cambia la letra a color blanco */
-            font-family: Arial, sans-serif; /* Cambia el tipo de letra a una más moderna */
-            text-align: center;        /* Centra todo el texto en la pantalla */
-            padding-top: 100px;        /* Le da espacio arriba para que no esté pegado al techo */
+            background-color: #121212; 
+            color: #ffffff;            
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            text-align: center;        
+            padding-top: 100px;        
         }
         h1 {
-            color: #ffcc00;            /* Hace que el título principal sea de color amarillo dorado */
-            font-size: 40px;           /* Agranda el tamaño del título */
+            color: #ff3366; /* Un color rojo neón violento */           
+            font-size: 50px;           
         }
         p {
-            font-size: 20px;           /* Agranda el tamaño del párrafo */
-            color: #cccccc;            /* Ponemos el párrafo en un gris claro elegante */
+            font-size: 22px;           
+            color: #aaaaaa;            
+        }
+        /* Estilo para nuestro botón rudo */
+        .boton-chingon {
+            background-color: #ffcc00;
+            color: #000000;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        .boton-chingon:hover {
+            background-color: #ffffff;
+            box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
     <h1>¡A la mierda los que no creyeron en mí!</h1>
-    <p>Este es mi inicio en la programación y nadie me va a parar.</p>
+    <p>Este es el inicio de mi imperio digital.</p>
+    <br><br>
+    <button class="boton-chingon" onclick="alert('¡Te dije que no soy ningún inútil, carajo!')">
+        Haz clic aquí para callar bocas
+    </button>
 </body>
 </html>
