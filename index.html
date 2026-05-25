@@ -3,167 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte & Soluciones Empresariales</title>
+    <title>Soluciones Pro | Soporte Administrativo Avanzado</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333333;
-            background-color: #f4f6f9;
-        }
-        header {
-            background-color: #0f2c59;
-            color: #ffffff;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 16px;
-        }
-        .hero {
-            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200') no-repeat center center/cover;
-            height: 50vh;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: 70px;
-        }
-        .hero h1 { font-size: 40px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; color: #f0f0f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #0f172a; color: #f8fafc; padding-top: 80px; }
         
-        .servicios { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .contenedor-servicios { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
-        .tarjeta-servicio { background-color: #ffffff; padding: 25px; border-radius: 8px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .tarjeta-servicio h3 { color: #0f2c59; margin-bottom: 10px; }
+        /* HEADER NAV */
+        header { background-color: #1e293b; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        header .logo { font-size: 22px; font-weight: 800; color: #fff; }
+        header .logo span { color: #38bdf8; }
+        header nav a { color: #cbd5e1; text-decoration: none; margin-left: 25px; font-weight: 600; transition: 0.3s; }
+        header nav a:hover { color: #38bdf8; }
 
-        .contacto { background-color: #0f2c59; color: #ffffff; padding: 60px 20px; text-align: center; }
+        /* HERO */
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); }
+        .hero h1 { font-size: 40px; font-weight: 800; margin-bottom: 15px; color: #fff; }
+        .hero p { font-size: 18px; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+
+        /* CONTENEDOR PRINCIPAL INTERACTIVO */
+        .cotizador-container { max-width: 700px; margin: 40px auto; background: #1e293b; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #334155; }
+        .cotizador-container h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; color: #38bdf8; text-align: center; }
+        .cotizador-container p.sub { text-align: center; color: #94a3b8; margin-bottom: 30px; font-size: 15px; }
+
+        label.field-label { display: block; margin-bottom: 8px; color: #cbd5e1; font-weight: 700; font-size: 14px; text-transform: uppercase; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 12px 16px; margin-bottom: 25px; background: #0f172a; border: 2px solid #334155; border-radius: 8px; color: #fff; font-size: 16px; transition: 0.3s; }
+        input:focus { border-color: #38bdf8; outline: none; }
+
+        /* MÚLTIPLES OPCIONES CON PRECIOS */
+        .opciones-servicios { margin-bottom: 25px; }
+        .opcion-card { display: flex; align-items: center; justify-content: space-between; background: #0f172a; padding: 15px 20px; border-radius: 8px; margin-bottom: 12px; border: 2px solid #334155; cursor: pointer; transition: 0.3s; }
+        .opcion-card:hover { border-color: #475569; }
+        .opcion-card.selected { border-color: #38bdf8; background: rgba(56, 189, 248, 0.05); }
         
-        /* Aquí estaba el error de llaves, este bloque está 100% saneado */
-        form {
-            max-width: 500px;
-            margin: 30px auto 0 auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: left;
-        }
-        form label { display: block; margin-bottom: 6px; color: #333333; font-weight: bold; }
-        form input, form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #cccccc; border-radius: 4px; font-size: 16px; color: #000000; }
-        form button { width: 100%; background-color: #0f2c59; color: #ffffff; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; }
-        form button:hover { background-color: #1d447d; }
-        
-        footer { background-color: #111111; color: #888888; text-align: center; padding: 15px; font-size: 14px; }
+        .opcion-info { display: flex; align-items: center; gap: 15px; }
+        .opcion-info input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #38bdf8; }
+        .opcion-text h4 { font-size: 16px; color: #f8fafc; font-weight: 700; }
+        .opcion-text p { font-size: 13px; color: #64748b; }
+        .precio-tag { font-weight: 700; color: #38bdf8; font-size: 16px; }
+
+        /* PANTALLA DE PRECIO DINÁMICO */
+        .total-box { background: #0f172a; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 30px; border: 2px dashed #38bdf8; }
+        .total-box span { display: block; font-size: 14px; color: #94a3b8; text-transform: uppercase; font-weight: 700; }
+        .total-box .monto { font-size: 36px; font-weight: 900; color: #25d366; }
+
+        /* BOTÓN DEFINITIVO */
+        button.btn-enviar { width: 100%; background: #25d366; color: #fff; padding: 16px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        button.btn-enviar:hover { background: #128c7e; transform: translateY(-2px); }
+
+        footer { text-align: center; padding: 30px; color: #475569; font-size: 14px; background: #0f172a; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">SOLUCIONES PRO</div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <div class="logo">SOLUCIONES<span>PRO</span></div>
+        <nav><a href="#">Panel de Cotización</a></nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1>Optimice Operaciones Empresariales</h1>
-        <p>Soporte administrativo eficiente para el crecimiento de su negocio.</p>
+    <section class="hero">
+        <h1>Plataforma Dinámica de Cotizaciones</h1>
+        <p>Seleccione los módulos administrativos que requiere su organización para calcular su presupuesto estimado al instante.</p>
     </section>
 
-    <section class="servicios" id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <div class="contenedor-servicios">
-            <div class="tarjeta-servicio">
-                <h3>Gestión Administrativa</h3>
-                <p>Organización documental y optimización de procesos internos para su negocio.</p>
+    <div class="cotizador-container">
+        <h2>Presupuesto Virtual</h2>
+        <p class="sub">Configure sus requerimientos múltiples en tiempo real</p>
+
+        <form id="dinamicoForm">
+            <label class="field-label">Empresa / Cliente:</label>
+            <input type="text" id="nombre" required placeholder="Ej. Corporación Álvarez & Asociados">
+
+            <label class="field-label">Correo Electrónico:</label>
+            <input type="email" id="correo" required placeholder="contacto@empresa.com">
+
+            <label class="field-label">Seleccione Múltiples Opciones:</label>
+            <div class="opciones-servicios">
+                
+                <div class="opcion-card" onclick="toggleServicio(this, 150, 'Soporte Administrativo')">
+                    <div class="opcion-info">
+                        <input type="checkbox" class="srv-check" value="150" data-name="Soporte Administrativo" onclick="event.stopPropagation(); actualizarTotal();">
+                        <div class="opcion-text">
+                            <h4>Soporte Administrativo</h4>
+                            <p>Control documentario y archivos internos</p>
+                        </div>
+                    </div>
+                    <div class="precio-tag">S/ 150 /mes</div>
+                </div>
+
+                <div class="opcion-card" onclick="toggleServicio(this, 200, 'Gestión de Facturación e IGV')">
+                    <div class="opcion-info">
+                        <input type="checkbox" class="srv-check" value="200" data-name="Gestión de Facturación e IGV" onclick="event.stopPropagation(); actualizarTotal();">
+                        <div class="opcion-text">
+                            <h4>Gestión de Facturación e IGV</h4>
+                            <p>Emisión, detracciones y conciliación bancaria</p>
+                        </div>
+                    </div>
+                    <div class="precio-tag">S/ 200 /mes</div>
+                </div>
+
+                <div class="opcion-card" onclick="toggleServicio(this, 250, 'Asistencia Virtual Premium')">
+                    <div class="opcion-info">
+                        <input type="checkbox" class="srv-check" value="250" data-name="Asistencia Virtual Premium" onclick="event.stopPropagation(); actualizarTotal();">
+                        <div class="opcion-text">
+                            <h4>Asistencia Virtual Premium</h4>
+                            <p>Gestión de agenda comercial y clientes VIP</p>
+                        </div>
+                    </div>
+                    <div class="precio-tag">S/ 250 /mes</div>
+                </div>
+
             </div>
-            <div class="tarjeta-servicio">
-                <h3>Asistencia Virtual</h3>
-                <p>Soporte remoto en manejo de agendas comerciales, atención y facturación.</p>
+
+            <div class="total-box">
+                <span>Inversión Estimada Total</span>
+                <div class="monto" id="totalVisor">S/ 0.00</div>
             </div>
-        </div>
-    </section>
 
-    <section class="contacto" id="contacto">
-        <h2>Solicite una Cotización</h2>
-        <p>Deje sus requerimientos y nos comunicaremos a la brevedad.</p>
-        [19:27, 24/5/2026] CB😎: <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte & Soluciones Empresariales</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background-color: #f4f6f9; }
-        header { background-color: #0f2c59; color: white; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
-        header .logo { font-size: 24px; font-weight: bold; }
-        header nav a { color: white; text-decoration: none; margin-left: 20px; }
-        .hero { background: linear-gradient(…
-[20:17, 24/5/2026] CB😎: <form id="whatsappForm">
-            <label for="nombre">Nombre de la Empresa o Contacto:</label>
-            <input type="text" id="nombre" required placeholder="Ej. Inversiones MM & Cia">
-
-            <label for="correo">Correo Electrónico Comercial:</label>
-            <input type="email" id="correo" required placeholder="ejemplo@empresa.com">
-
-            <label for="mensaje">Detalle el servicio que requiere:</label>
-            <textarea id="mensaje" rows="4" required placeholder="Escriba aquí lo que necesita..."></textarea>
-
-            <button type="submit">Enviar por WhatsApp Corporativo</button>
+            <button type="submit" class="btn-enviar">Enviar Configuración por WhatsApp</button>
         </form>
-
-        <script>
-            document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                var nombre = document.getElementById('nombre').value;
-                var correo = document.getElementById('correo').value;
-                var mensaje = document.getElementById('mensaje').value;
-                
-                // Tu número de atención
-                var telefono = "51910609311"; 
-                
-                var texto = "NUEVA SOLICITUD DE COTIZACIÓN%0A" +
-                            "--------------------------------------%0A" +
-                            "Empresa: " + nombre + "%0A" +
-                            "Correo: " + correo + "%0A" +
-                            "Servicio: " + mensaje;
-                
-                window.open("https://api.whatsapp.com/send?phone=" + telefono + "&text=" + texto, '_blank');
-            });
-        </script>
-        </form>
-        </form>
-    </section>
+    </div>
 
     <footer>
-        &copy; 2026 Soluciones Pro. Todos los derechos reservados.
+        &copy; 2026 Soluciones Pro. Sistema Comercial Automatizado.
     </footer>
 
+    <script>
+        // Lógica interactiva para seleccionar dándole clic a toda la tarjeta
+        function toggleServicio(card, precio, nombre) {
+            const checkbox = card.querySelector('.srv-check');
+            checkbox.checked = !checkbox.checked;
+            if(checkbox.checked) {
+                card.classList.add('selected');
+            } else {
+                card.classList.remove('selected');
+            }
+            actualizarTotal();
+        }
+
+        // Motor de cálculo en tiempo real
+        function actualizarTotal() {
+            const checkboxes = document.querySelectorAll('.srv-check');
+            let total = 0;
+            
+            checkboxes.forEach(box => {
+                const card = box.closest('.opcion-card');
+                if(box.checked) {
+                    total += parseFloat(box.value);
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+            });
+            
+            document.getElementById('totalVisor').innerText = "S/ " + total.toFixed(2);
+        }
+
+        // Envío inteligente procesado a WhatsApp
+        document.getElementById('dinamicoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const checkboxes = document.querySelectorAll('.srv-check');
+            
+            let serviciosSeleccionados = [];
+            let total = 0;
+            
+            checkboxes.forEach(box => {
+                if(box.checked) {
+                    serviciosSeleccionados.push("- " + box.getAttribute('data-name'));
+                    total += parseFloat(box.value);
+                }
+            });
+            
+            if(serviciosSeleccionados.length === 0) {
+                alert("Por favor, seleccione al menos un servicio antes de enviar.");
+                return;
+            }
+            
+            const telefono = "51910609311";
+            
+            let texto = "SOLICITUD DE SERVICIOS AUTOMATIZADA%0A" +
+                        "-----------------------------------------%0A" +
+                        "🏢 Empresa: " + nombre + "%0A" +
+                        "✉️ Correo: " + correo + "%0A%0A" +
+                        "🛠️ Módulos Requeridos:%0A" + serviciosSeleccionados.join("%0A") + "%0A%0A" +
+                        "-----------------------------------------%0A" +
+                        "💰 PRESUPUESTO ESTIMADO: S/ " + total.toFixed(2) + " al mes.%0A" +
+                        "-----------------------------------------";
+            
+            window.open("https://api.whatsapp.com/send?phone=" + telefono + "&text=" + texto, '_blank');
+        });
+    </script>
 </body>
 </html>
