@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUCIONES PRO | Inteligencia Administrativa</title>
+    <title>SOLUCIONES PRO | Consola de Cotizaciones Avanzada</title>
     <style>
-        /* ESTILOS DE AGENCIA DIGITAL PREMIUM */
+        /* DISEÑO DE AGENCIA DIGITAL PREMIUM */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: #f8fafc; min-height: 100vh; padding-top: 100px; }
         
-        /* HEADER CON EFECTO GLASSMORPHISM */
+        /* HEADER NAVEGACIÓN INTELIGENTE */
         header { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
         header .logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #fff; }
-        header .logo span { background: linear-gradient(to right, #38bdf8, #818cf8); background-clip: text; -webkit-text-fill-color: transparent; }
+        header .logo span { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* HERO ULTRA DINÁMICO */
+        /* HERO TEXT */
         .hero { text-align: center; max-width: 900px; margin: 0 auto 40px auto; padding: 0 20px; }
-        .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(to right, #fff, #cbd5e1); background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 19px; color: #94a3b8; }
+        .hero h1 { font-size: 44px; font-weight: 800; line-height: 1.2; margin-bottom: 15px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; background-clip: text;-webkit-text-fill-color: transparent; }
+        .hero p { font-size: 18px; color: #94a3b8; }
 
-        /* INTERFAZ DE CONTROL AVANZADA */
+        /* CONSOLA INTERACTIVA CENTRAL */
         .panel-control { max-width: 800px; margin: 0 auto 60px auto; background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); padding: 40px; border-radius: 24px; backdrop-filter: blur(20px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
         
         .seccion-titulo { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #818cf8; margin-bottom: 25px; border-left: 3px solid #38bdf8; padding-left: 10px; }
@@ -30,7 +30,7 @@
         .input-group input, .input-group select { background: #0f172a; border: 2px solid #334155; padding: 14px; border-radius: 12px; color: #fff; font-size: 16px; transition: all 0.3s ease; }
         .input-group input:focus, .input-group select:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
 
-        /* MULTI-OPCIONES INTERACTIVAS CONTEMPORÁNEAS */
+        /* SELECTORES MÚLTIPLES DINÁMICOS */
         .opciones-container { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 30px; }
         .tarjeta-opcion { background: rgba(15, 23, 42, 0.6); border: 2px solid #334155; padding: 20px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
         .tarjeta-opcion:hover { border-color: #4f46e5; background: rgba(79, 70, 229, 0.05); transform: scale(1.01); }
@@ -46,13 +46,12 @@
         .detalles-texto p { font-size: 14px; color: #64748b; }
         .precio-badge { background: #1e293b; color: #38bdf8; padding: 8px 14px; border-radius: 30px; font-weight: 700; font-size: 15px; border: 1px solid rgba(255,255,255,0.05); }
 
-        /* VISOR DE PRESUPUESTO INTELIGENTE */
+        /* PANTALLA INTELIGENTE DE TARIFA */
         .pantalla-presupuesto { background: radial-gradient(circle at top left, #1e1b4b, #0f172a); border: 1px solid rgba(129, 140, 248, 0.2); padding: 30px; border-radius: 16px; text-align: center; margin-bottom: 30px; position: relative; overflow: hidden; }
-        .pantalla-presupuesto::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(56,189,248,0.05) 0%, transparent 70%); pointer-events: none; }
         .pantalla-presupuesto p { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; margin-bottom: 10px; font-weight: 700; }
         .pantalla-presupuesto .precio-final { font-size: 46px; font-weight: 900; color: #38bdf8; text-shadow: 0 0 20px rgba(56,189,248,0.3); }
 
-        /* BOTÓN MATADOR */
+        /* BOTÓN MATADOR COMERCIAL */
         .btn-solicitar { width: 100%; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: #fff; padding: 18px; border: none; border-radius: 14px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25); }
         .btn-solicitar:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
 
@@ -70,41 +69,41 @@
 
     <header>
         <div class="logo">SOLUCIONES<span>PRO</span></div>
-        <nav><a href="#configurador">Centro Dinámico</a></nav>
+        <nav><a href="#configurador">Consola Digital</a></nav>
     </header>
 
     <section class="hero">
-        <h1>Gestión Operativa de Alto Rendimiento</h1>
-        <p>Diseñe y configure la estructura de soporte virtual y control corporativo que su negocio necesita con nuestra consola interactiva.</p>
+        <h1>Plataforma Dinámica de Gestión Operativa</h1>
+        <p>Configure la combinación exacta de servicios y volumen de carga laboral para calcular su presupuesto estimado corporativo en tiempo real.</p>
     </section>
 
     <div class="panel-control" id="configurador">
         <form id="panelForm">
             
-            <div class="seccion-titulo">1. Credenciales de la Empresa</div>
+            <div class="seccion-titulo">1. Datos de Contacto</div>
             <div class="grid-inputs">
                 <div class="input-group">
-                    <label>Razón Social o Contacto</label>
-                    <input type="text" id="empresa" required placeholder="Ej. Álvarez Corporación">
+                    <label>Razón Social o Cliente</label>
+                    <input type="text" id="empresa" required placeholder="Ej. Inversiones Álvarez">
                 </div>
                 <div class="input-group">
-                    <label>Correo Electrónico Corporativo</label>
-                    <input type="email" id="correo" required placeholder="gerencia@empresa.com">
+                    <label>Correo de Negocios</label>
+                    <input type="email" id="correo" required placeholder="contacto@empresa.com">
                 </div>
             </div>
 
-            <div class="seccion-titulo">2. Volumen de Operación Estructurado</div>
+            <div class="seccion-titulo">2. Parámetros de Operación</div>
             <div class="grid-inputs">
                 <div class="input-group">
-                    <label>Carga Laboral Estimada</label>
+                    <label>Carga Laboral Mensual</label>
                     <select id="cargaHoraria" onchange="calcularPresupuesto()">
-                        <option value="1" data-multi="1.0">Soporte Básico (Hasta 10 horas/semana)</option>
-                        <option value="2" data-multi="1.8">Soporte Intermedio (Hasta 25 horas/semana)</option>
-                        <option value="3" data-multi="3.0">Soporte Dedicado Full-Time (40 horas/semana)</option>
+                        <option value="1" data-multi="1.0">Soporte Básico (Hasta 10 hrs/semana)</option>
+                        <option value="2" data-multi="1.8">Soporte Intermedio (Hasta 25 hrs/semana)</option>
+                        <option value="3" data-multi="3.0">Soporte Dedicado Full-Time (40 hrs/semana)</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Prioridad de Respuesta</label>
+                    <label>Velocidad de Respuesta</label>
                     <select id="prioridad" onchange="calcularPresupuesto()">
                         <option value="0" data-Adic="0">Estándar (Siguiente día útil)</option>
                         <option value="50" data-Adic="50">Urgente (Menos de 4 horas) [+ S/ 50]</option>
@@ -112,37 +111,37 @@
                 </div>
             </div>
 
-            <div class="seccion-titulo">3. Selección Múltiple de Módulos Operativos</div>
+            <div class="seccion-titulo">3. Selección Múltiple de Módulos Administrativos</div>
             <div class="opciones-container">
                 
-                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 180, 'Soporte Administrativo y Archivo Digital')">
+                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 180, 'Soporte Administrativo General')">
                     <div class="opcion-info-lado">
                         <div class="check-custom"></div>
                         <div class="detalles-texto">
-                            <h3>Soporte Administrativo General</h3>
-                            <p>Organización documentaria, control de archivos y optimización operativa.</p>
+                            <h3>Soporte Administrativo</h3>
+                            <p>Control documentario, organización de flujos y archivos digitales.</p>
                         </div>
                     </div>
                     <div class="precio-badge">S/ 180</div>
                 </div>
 
-                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 220, 'Gestión Comercial, Facturación e IGV')">
+                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 220, 'Control Comercial, Facturación e IGV')">
                     <div class="opcion-info-lado">
                         <div class="check-custom"></div>
                         <div class="detalles-texto">
                             <h3>Facturación Comercial e IGV</h3>
-                            <p>Control de emisión, conciliaciones bancarias y estado de detracciones.</p>
+                            <p>Emisión de comprobantes, conciliación de cuentas y detracciones.</p>
                         </div>
                     </div>
                     <div class="precio-badge">S/ 220</div>
                 </div>
 
-                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 260, 'Asistencia Virtual Ejecutiva')">
+                <div class="tarjeta-opcion" onclick="seleccionarTarjeta(this, 260, 'Asistencia Virtual de Gerencia')">
                     <div class="opcion-info-lado">
                         <div class="check-custom"></div>
                         <div class="detalles-texto">
-                            <h3>Asistencia Virtual y Clientes VIP</h3>
-                            <p>Gestión de agenda comercial, llamadas corporativas y coordinación.</p>
+                            <h3>Asistencia Virtual Premium</h3>
+                            <p>Gestión integral de agenda comercial y atención de cuentas corporativas.</p>
                         </div>
                     </div>
                     <div class="precio-badge">S/ 260</div>
@@ -151,16 +150,16 @@
             </div>
 
             <div class="pantalla-presupuesto">
-                <p>Presupuesto Mensual Estimado</p>
+                <p>Presupuesto Estimado Mensual</p>
                 <div class="precio-final" id="visorTotal">S/ 0.00</div>
             </div>
 
-            <button type="submit" class="btn-solicitar">Lanzar Requerimiento a WhatsApp</button>
+            <button type="submit" class="btn-solicitar">Lanzar Presupuesto a WhatsApp</button>
         </form>
     </div>
 
     <footer>
-        &copy; 2026 Soluciones Pro. Consola Corporativa de Ingeniería Administrativa.
+        &copy; 2026 Soluciones Pro. Consola Inteligente de Soporte Virtual.
     </footer>
 
     <script>
@@ -183,15 +182,12 @@
                 subtotalServicios += serviciosSeleccionados[srv];
             }
 
-            // Obtener multiplicador por horas
             const selectorCarga = document.getElementById('cargaHoraria');
             const multiplicador = parseFloat(selectorCarga.options[selectorCarga.selectedIndex].getAttribute('data-multi'));
             
-            // Obtener costo por prioridad
             const selectorPrioridad = document.getElementById('prioridad');
             const adicionalPrioridad = parseFloat(selectorPrioridad.options[selectorPrioridad.selectedIndex].getAttribute('data-Adic'));
 
-            // Algoritmo dinámico
             let inversionTotal = (subtotalServicios * multiplicador) + adicionalPrioridad;
 
             document.getElementById('visorTotal').innerText = "S/ " + inversionTotal.toFixed(2);
@@ -208,25 +204,25 @@
             let listaModulos = Object.keys(serviciosSeleccionados);
             
             if(listaModulos.length === 0) {
-                alert("Seleccione al menos un módulo operativo antes de lanzar el requerimiento.");
+                alert("Por favor, seleccione al menos un módulo operativo en la pantalla.");
                 return;
             }
             
             const totalFinal = document.getElementById('visorTotal').innerText;
-            const telefono = "51993325298";
+            const telefono = "51993325298"; // Número de WhatsApp de destino (con código de país)
             
-            let textoWhatsApp = "SISTEMA DE COTIZACIÓN DIGITAL - SOLUCIONES PRO%0A" +
+            let textoWhatsApp = "SISTEMA DE COTIZACIÓN AUTOMATIZADO - SOLUCIONES PRO%0A" +
                                 "========================================%0A" +
-                                "🏢 Empresa/Contacto: " + empresa + "%0A" +
-                                "✉️ Correo de Negocios: " + correo + "%0A" +
+                                "🏢 Cliente / Empresa: " + empresa + "%0A" +
+                                "✉️ Correo Comercial: " + correo + "%0A" +
                                 "========================================%0A" +
-                                "⚙️ Módulos Activos:%0A" + listaModulos.map(m => "- " + m).join("%0A") + "%0A%0A" +
-                                "⏰ Carga Operativa: " + cargaText + "%0A" +
-                                "⚡ Nivel de Respuesta: " + prioridadText + "%0A" +
+                                "🛠️ Módulos Activados:%0A" + listaModulos.map(m => "- " + m).join("%0A") + "%0A%0A" +
+                                "⏰ Carga de Trabajo: " + cargaText + "%0A" +
+                                "⚡ Respuesta Directa: " + prioridadText + "%0A" +
                                 "========================================%0A" +
-                                "💰 INVERSIÓN TOTAL ESTIMADA: " + totalFinal + " /mes%0A" +
+                                "💰 TARIFA MENSUAL ESTIMADA: " + totalFinal + "%0A" +
                                 "========================================%0A" +
-                                "Configuración generada dinámicamente desde el panel web.";
+                                "Mensaje enviado automáticamente desde la consola web oficial.";
             
             window.open("https://api.whatsapp.com/send?phone=" + telefono + "&text=" + textoWhatsApp, '_blank');
         });
