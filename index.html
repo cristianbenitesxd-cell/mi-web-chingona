@@ -111,19 +111,52 @@
     <section class="contacto" id="contacto">
         <h2>Solicite una Cotización</h2>
         <p>Deje sus requerimientos y nos comunicaremos a la brevedad.</p>
-        
-        <form action="https://formbold.com/s/3G7Xo" method="POST">
+        [19:27, 24/5/2026] CB😎: <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte & Soluciones Empresariales</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background-color: #f4f6f9; }
+        header { background-color: #0f2c59; color: white; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        header .logo { font-size: 24px; font-weight: bold; }
+        header nav a { color: white; text-decoration: none; margin-left: 20px; }
+        .hero { background: linear-gradient(…
+[20:17, 24/5/2026] CB😎: <form id="whatsappForm">
             <label for="nombre">Nombre de la Empresa o Contacto:</label>
-            <input type="text" name="name" id="nombre" required placeholder="Ej. Inversiones MM & Cia">
+            <input type="text" id="nombre" required placeholder="Ej. Inversiones MM & Cia">
 
             <label for="correo">Correo Electrónico Comercial:</label>
-            <input type="email" name="email" id="correo" required placeholder="ejemplo@empresa.com">
+            <input type="email" id="correo" required placeholder="ejemplo@empresa.com">
 
             <label for="mensaje">Detalle el servicio que requiere:</label>
-            <textarea name="message" id="mensaje" rows="4" required placeholder="Escriba aquí lo que necesita..."></textarea>
+            <textarea id="mensaje" rows="4" required placeholder="Escriba aquí lo que necesita..."></textarea>
 
-            <button type="submit">Enviar Solicitud</button>
+            <button type="submit">Enviar por WhatsApp Corporativo</button>
         </form>
+
+        <script>
+            document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var nombre = document.getElementById('nombre').value;
+                var correo = document.getElementById('correo').value;
+                var mensaje = document.getElementById('mensaje').value;
+                
+                // Tu número de atención
+                var telefono = "51910609311"; 
+                
+                var texto = "NUEVA SOLICITUD DE COTIZACIÓN%0A" +
+                            "--------------------------------------%0A" +
+                            "Empresa: " + nombre + "%0A" +
+                            "Correo: " + correo + "%0A" +
+                            "Servicio: " + mensaje;
+                
+                window.open("https://api.whatsapp.com/send?phone=" + telefono + "&text=" + texto, '_blank');
+            });
+        </script>
         </form>
         </form>
     </section>
